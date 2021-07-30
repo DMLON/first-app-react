@@ -1,4 +1,12 @@
 import ReactDOM from "react-dom";
 import App from "./app";
 
-ReactDOM.render(<App/>,document.getElementById('root'));
+const Titulo = () => {
+    return <h1>Lista de comentarios</h1>
+}
+
+ReactDOM.render(
+<App>
+    <Titulo></Titulo>
+</App>,
+document.getElementById('root'));
