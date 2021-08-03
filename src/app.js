@@ -1,6 +1,10 @@
 import React from "react";
 import Comentario from "./components/comentarioclass";
 import ComentarioFuncion from "./components/comentariofunc";
+import StateExample from "./components/stateExample";
+import ClickerCounter from "./components/clickerCounter"
+import RealTimeClock from "./components/realTimeClock"
+import HooksExample from "./components/hooksExample"
 import "./css/style.css";
 
 const comentarios = [
@@ -53,9 +57,16 @@ class App extends React.Component {
                 {/* Voy a poner los hijos acá */}
                 <div>{this.props.children}</div>
                 {
+                    // Le tengo que poner el bind para que el this se refiera al objeto propio, así dentro de on selectedComment 
+                    // Se refiera al objeto de App
                 renderComentarios(this.onSelectedComment.bind(this))
                 }
                 <div>{this.state.comentarioSelected}</div>
+
+                <StateExample></StateExample>
+                <ClickerCounter></ClickerCounter>
+                <RealTimeClock></RealTimeClock>
+                <HooksExample></HooksExample>
             </div>
         );
     }
